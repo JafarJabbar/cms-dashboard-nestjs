@@ -3,6 +3,7 @@ import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {ConfigModule} from "@nestjs/config";
 import {TypeOrmModule} from "@nestjs/typeorm";
+import { MediaModule } from './media/media.module';
 import { ContentModule } from './content/content.module';
 import * as process from "process";
 
@@ -19,7 +20,8 @@ import * as process from "process";
             autoLoadEntities: true,
             synchronize: true
         }),
-        ContentModule
+        ContentModule,
+        MediaModule
     ],
     controllers: [AppController],
     providers: [AppService],
